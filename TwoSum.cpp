@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 //Approach 1 (Naive Solution)
-vector<int> TwoSum(vector<int> &arr,int target){
+/* vector<int> TwoSum(vector<int> &arr,int target){
     vector<int> ans;
     for(int i = 0; i<arr.size(); i++){
         for(int j = i+1; j<arr.size(); j++){
@@ -13,18 +13,22 @@ vector<int> TwoSum(vector<int> &arr,int target){
         }
     }
     return {-1,-1};
-}
+} */
 
-/* vector<int> TwoSum(vector<int> &arr,int target){
+vector<int> TwoSum(vector<int> &arr,int target){
     int n = arr.size();
     unordered_map<int,int> mp;
     for (int i = 0; i < n; i++)
     {
+        int num = arr[i];
         int need = target - arr[i];
+        if(mp.find(need)!=mp.end()) return {mp[need],i};
 
+        mp[num] = i;
     }
-    
-} */
+
+    return{-1,-1};
+}
 int main(){
     vector<int> arr;
     int n;
