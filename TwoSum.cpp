@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 //Approach 1 (Naive Solution)
+
 /* vector<int> TwoSum(vector<int> &arr,int target){
     vector<int> ans;
     for(int i = 0; i<arr.size(); i++){
@@ -14,6 +15,8 @@ using namespace std;
     }
     return {-1,-1};
 } */
+
+// Approach 2 (Using Hash Table)
 
 vector<int> TwoSum(vector<int> &arr,int target){
     int n = arr.size();
@@ -29,6 +32,7 @@ vector<int> TwoSum(vector<int> &arr,int target){
 
     return{-1,-1};
 }
+
 int main(){
     vector<int> arr;
     int n;
