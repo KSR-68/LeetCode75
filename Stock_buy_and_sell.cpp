@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 // Brute Force (TLE on LeetCode)
+
 /* int max_Profit(vector<int> &prices)
 {
     int max_profit = 0;
@@ -14,19 +15,21 @@ using namespace std;
     }
     return max_profit;
 } */
+
 // Sliding Window (Somehow)
+
 int max_Profit(vector<int> &prices)
 {
     int max_profit = 0;
     int buyIndex = 0;
     for (int i = 1; i < prices.size(); i++)
     {
-        if (prices[buyIndex] < prices[i])  //If you get a buying price less than the current price why not jump on that?
+        if (prices[buyIndex] < prices[i])  
         {
             max_profit = max(prices[i] - prices[buyIndex], max_profit);
         }
         else
-            buyIndex = i;
+            buyIndex = i;   //If you get a buying price less than the current price why not jump on that?
     }
     return max_profit;
 }
